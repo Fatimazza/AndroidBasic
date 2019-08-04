@@ -24,24 +24,24 @@
         android:lines="1" />
 
     <TextView
-        android:id="@+id/edt_width"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/lebar" />
 
     <EditText
+        android:id="@+id/edt_width"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:lines="1" />
 
     <TextView
-        android:id="@+id/edt_height"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/tinggi" />
 
     <EditText
+        android:id="@+id/edt_height"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
