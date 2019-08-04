@@ -53,6 +53,18 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 edtHeight.error = "Field ini tidak boleh kosong"
             }
 
+            val length = toDouble(inputLength)
+            val width = toDouble(inputWidth)
+            val height = toDouble(inputHeight)
+
+        }
+    }
+
+    private fun toDouble(str: String): Double? {
+        return try {
+            str.toDouble()
+        } catch (e: NumberFormatException) {
+            null
         }
     }
 }
