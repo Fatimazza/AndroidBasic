@@ -57,6 +57,25 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             val width = toDouble(inputWidth)
             val height = toDouble(inputHeight)
 
+            if (length == null) {
+                isInvalidDuble = true
+                edtLength.error = "Field ini harus berupa nomor yang valid"
+            }
+
+            if (width == null) {
+                isInvalidDuble = true
+                edtWidth.error = "Field ini harus berupa nomor yang valid"
+            }
+
+            if (height == null) {
+                isInvalidDuble = true
+                edtHeight.error = "Field ini harus berupa nomor yang valid"
+            }
+
+            if (!isEmptyFields && !isInvalidDuble) {
+                val volume = length as Double * width as Double * height as Double
+                tvResult.text = volume.toString()
+            }
         }
     }
 
