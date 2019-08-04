@@ -2,11 +2,13 @@ package io.github.fatimazza.androidbasic
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.text.TextUtils
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var edtLength: EditText
     private lateinit var edtWidth: EditText
@@ -23,5 +25,34 @@ class MainActivity : AppCompatActivity() {
         edtHeight = findViewById(R.id.edt_height)
         btnCalculate = findViewById(R.id.btn_calculate)
         tvResult = findViewById(R.id.tv_result)
+
+        btnCalculate.setOnClickListener(this)
+    }
+
+    override fun onClick(view: View) {
+        if (view.id == R.id.btn_calculate) {
+            val inputLength = edtLength.text.toString().trim { it <= ' ' }
+            val inputWidth = edtWidth.text.toString().trim { it <= ' ' }
+            val inputHeight = edtHeight.text.toString().trim { it <= ' ' }
+
+            var isEmptyFields = false
+            var isInvalidDuble = false
+
+            if (TextUtils.isEmpty(inputLength)) {
+                isEmptyFields = true
+                edtLength.error = "Field ini tidak boleh kosong"
+            }
+
+            if (TextUtils.isEmpty(inputWidth)) {
+                isEmptyFields = true
+                edtWidth.error = "Field ini tidak boleh kosong"
+            }
+
+            if (TextUtils.isEmpty(inputHeight)) {
+                isEmptyFields = true
+                edtHeight.error = "Field ini tidak boleh kosong"
+            }
+
+        }
     }
 }
