@@ -14,6 +14,9 @@ class IntentActivity : AppCompatActivity(), View.OnClickListener {
 
         val btnMove: Button = findViewById(R.id.btn_move_activity)
         btnMove.setOnClickListener(this)
+
+        val btnMoveWithDta: Button = findViewById(R.id.btn_move_activity_data)
+        btnMoveWithDta.setOnClickListener(this)
     }
 
     override fun onClick(view: View) {
@@ -21,6 +24,9 @@ class IntentActivity : AppCompatActivity(), View.OnClickListener {
             R.id.btn_move_activity -> {
                 val moveIntent = Intent(this, IntentMoveActivity::class.java)
                 startActivity(moveIntent)
+            }
+            R.id.btn_move_activity_data -> {
+
             }
         }
     }
