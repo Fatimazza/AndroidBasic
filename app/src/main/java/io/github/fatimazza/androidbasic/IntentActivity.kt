@@ -1,6 +1,7 @@
 package io.github.fatimazza.androidbasic
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
@@ -35,7 +36,9 @@ class IntentActivity : AppCompatActivity(), View.OnClickListener {
                 startActivity(moveIntentWithData)
             }
             R.id.btn_dial_number -> {
-
+                val phoneNumber = "081234567890"
+                val dialPhoneIntent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:$phoneNumber"))
+                startActivity(dialPhoneIntent)
             }
         }
     }
