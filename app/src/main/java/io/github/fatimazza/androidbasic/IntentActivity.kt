@@ -26,7 +26,10 @@ class IntentActivity : AppCompatActivity(), View.OnClickListener {
                 startActivity(moveIntent)
             }
             R.id.btn_move_activity_data -> {
-
+                val moveIntentWithData = Intent(this, IntentMoveDataActivity::class.java)
+                moveIntentWithData.putExtra(IntentMoveDataActivity.EXTRA_NAME, "Dicoding Academy")
+                moveIntentWithData.putExtra(IntentMoveDataActivity.EXTRA_AGE, 27)
+                startActivity(moveIntentWithData)
             }
         }
     }
