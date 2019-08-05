@@ -17,6 +17,9 @@ class IntentActivity : AppCompatActivity(), View.OnClickListener {
 
         val btnMoveWithDta: Button = findViewById(R.id.btn_move_activity_data)
         btnMoveWithDta.setOnClickListener(this)
+
+        val btnDialNumber: Button = findViewById(R.id.btn_dial_number)
+        btnDialNumber.setOnClickListener(this)
     }
 
     override fun onClick(view: View) {
@@ -30,6 +33,9 @@ class IntentActivity : AppCompatActivity(), View.OnClickListener {
                 moveIntentWithData.putExtra(IntentMoveDataActivity.EXTRA_NAME, "Dicoding Academy")
                 moveIntentWithData.putExtra(IntentMoveDataActivity.EXTRA_AGE, 27)
                 startActivity(moveIntentWithData)
+            }
+            R.id.btn_dial_number -> {
+
             }
         }
     }
