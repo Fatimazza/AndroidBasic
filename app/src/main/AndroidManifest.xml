@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".IntentMoveActivity"></activity>
+        <activity android:name=".IntentMoveDataActivity" />
+        <activity android:name=".IntentMoveActivity" />
         <activity android:name=".MainActivity" />
     </application>
 
