@@ -49,4 +49,8 @@
     <string name="heroes_name">Nama Pahlawan</string>
     <string name="heroes_origin">Asal</string>
 
+    <string name="recyclerview_list">List</string>
+    <string name="recyclerview_grid">Grid</string>
+    <string name="recyclerview_cardview">CardView</string>
+
 </resources>
