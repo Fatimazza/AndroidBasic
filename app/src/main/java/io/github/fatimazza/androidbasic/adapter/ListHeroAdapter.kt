@@ -6,7 +6,7 @@ import android.view.ViewGroup
 
 class ListHeroAdapter : RecyclerView.Adapter<ListHeroAdapter.ListViewHolder>() {
 
-    override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ListViewHolder {
+    override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ListViewHolder {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
@@ -14,7 +14,7 @@ class ListHeroAdapter : RecyclerView.Adapter<ListHeroAdapter.ListViewHolder>() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    override fun onBindViewHolder(p0: ListViewHolder, p1: Int) {
+    override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
