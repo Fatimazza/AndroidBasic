@@ -6,7 +6,7 @@ import android.view.ViewGroup
 
 class CardViewAdapter : RecyclerView.Adapter<CardViewAdapter.CardviewViewHolder>() {
 
-    override fun onCreateViewHolder(p0: ViewGroup, p1: Int): CardviewViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardviewViewHolder {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
@@ -14,7 +14,7 @@ class CardViewAdapter : RecyclerView.Adapter<CardViewAdapter.CardviewViewHolder>
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    override fun onBindViewHolder(p0: CardviewViewHolder, p1: Int) {
+    override fun onBindViewHolder(holder: CardviewViewHolder, position: Int) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
