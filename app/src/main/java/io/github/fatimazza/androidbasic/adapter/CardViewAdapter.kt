@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import io.github.fatimazza.androidbasic.R
@@ -35,6 +36,25 @@ class CardViewAdapter(private val listHeroes: ArrayList<Hero>) :
 
         holder.tvName.text = name
         holder.tvOrigin.text = origin
+
+        holder.btnFavorite.setOnClickListener {
+            Toast.makeText(
+                holder.itemView.context,
+                "Favorite " + listHeroes[holder.adapterPosition].name, Toast.LENGTH_LONG
+            ).show()
+        }
+        holder.btnShare.setOnClickListener {
+            Toast.makeText(
+                holder.itemView.context,
+                "Share " + listHeroes[holder.adapterPosition].name, Toast.LENGTH_LONG
+            ).show()
+        }
+        holder.itemView.setOnClickListener {
+            Toast.makeText(
+                holder.itemView.context,
+                "Kamu memilih " + listHeroes[holder.adapterPosition].name, Toast.LENGTH_LONG
+            ).show()
+        }
     }
 
     inner class CardviewViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
