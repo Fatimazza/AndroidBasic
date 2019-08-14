@@ -1,6 +1,7 @@
 package io.github.fatimazza.androidbasic
 
 import android.os.Bundle
+import android.support.v7.app.ActionBar
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
@@ -18,9 +19,12 @@ class RecyclerViewActivity : AppCompatActivity() {
     private lateinit var rvHeroes: RecyclerView
     private var list: ArrayList<Hero> = arrayListOf()
 
+    private var title: String = "Mode List"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recycler_view)
+        setActionBarTitle(title)
 
         rvHeroes = findViewById(R.id.rv_hero)
         rvHeroes.setHasFixedSize(true)
@@ -60,14 +64,26 @@ class RecyclerViewActivity : AppCompatActivity() {
     private fun setMode(selectedMode: Int) {
         when (selectedMode) {
             R.id.action_list -> {
+                title = "Mode List"
+                setActionBarTitle(title)
                 showRecyclerList()
             }
             R.id.action_grid -> {
+                title = "Mode Grid"
+                setActionBarTitle(title)
                 showRecyclerGrid()
             }
             R.id.action_cardview -> {
+                title = "Mode CardView"
+                setActionBarTitle(title)
                 showRecyclerCardview()
             }
+        }
+    }
+
+    private fun setActionBarTitle(title: String) {
+        if (supportActionBar != null) {
+            (supportActionBar as ActionBar).title = title
         }
     }
 }
