@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.Menu
 import android.view.MenuItem
+import io.github.fatimazza.androidbasic.adapter.CardViewAdapter
 import io.github.fatimazza.androidbasic.adapter.GridHeroAdapter
 import io.github.fatimazza.androidbasic.adapter.ListHeroAdapter
 import io.github.fatimazza.androidbasic.model.Hero
@@ -40,6 +41,12 @@ class RecyclerViewActivity : AppCompatActivity() {
         rvHeroes.adapter = gridHeroAdapter
     }
 
+    private fun showRecyclerCardview() {
+        rvHeroes.layoutManager = LinearLayoutManager(this)
+        val cardHeroAdapter = CardViewAdapter(list)
+        rvHeroes.adapter = cardHeroAdapter
+    }
+
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_recycler_view, menu)
         return super.onCreateOptionsMenu(menu)
@@ -59,7 +66,7 @@ class RecyclerViewActivity : AppCompatActivity() {
                 showRecyclerGrid()
             }
             R.id.action_cardview -> {
-
+                showRecyclerCardview()
             }
         }
     }

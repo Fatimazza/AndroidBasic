@@ -65,7 +65,7 @@
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="1.3"
                 android:text="@string/favorite"
                 android:textSize="12sp" />
 
@@ -74,7 +74,7 @@
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="1.2"
                 android:text="@string/share"
                 android:textSize="12sp" />
 
