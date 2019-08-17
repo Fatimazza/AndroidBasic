@@ -8,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import io.github.fatimazza.androidbasic.adapter.CardViewAdapter
 import io.github.fatimazza.androidbasic.adapter.GridHeroAdapter
 import io.github.fatimazza.androidbasic.adapter.ListHeroAdapter
@@ -37,6 +38,12 @@ class RecyclerViewActivity : AppCompatActivity() {
         rvHeroes.layoutManager = LinearLayoutManager(this)
         val listHeroAdapter = ListHeroAdapter(list)
         rvHeroes.adapter = listHeroAdapter
+
+        listHeroAdapter.setOnItemClickCallback(object : ListHeroAdapter.OnItemClickCallback {
+            override fun onItemClicked(data: Hero) {
+                showSelectedHer(data)
+            }
+        })
     }
 
     private fun showRecyclerGrid() {
@@ -49,6 +56,10 @@ class RecyclerViewActivity : AppCompatActivity() {
         rvHeroes.layoutManager = LinearLayoutManager(this)
         val cardHeroAdapter = CardViewAdapter(list)
         rvHeroes.adapter = cardHeroAdapter
+    }
+
+    private fun showSelectedHer(hero: Hero) {
+        Toast.makeText(this, "You choose " + hero.name, Toast.LENGTH_SHORT).show()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
