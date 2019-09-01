@@ -1,6 +1,6 @@
 package io.github.fatimazza.androidbasic.fragment
 
-
+import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.DialogFragment
 import android.view.LayoutInflater
@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.RadioButton
 import android.widget.RadioGroup
-
 import io.github.fatimazza.androidbasic.R
 import kotlinx.android.synthetic.main.fragment_option_dialog.*
 
@@ -37,6 +36,8 @@ class OptionDialogFragment : DialogFragment(), View.OnClickListener {
     private val btnClose: Button
         get() = btn_dialog_close
 
+    private var optionDialogListener: OnOptionDialogListener? = null
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -48,6 +49,21 @@ class OptionDialogFragment : DialogFragment(), View.OnClickListener {
         super.onViewCreated(view, savedInstanceState)
         btnChoose.setOnClickListener(this)
         btnClose.setOnClickListener(this)
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        val parentFragment = parentFragment
+        if (parentFragment is LastFragment) {
+            val lastFragment = parentFragment
+            this.optionDialogListener = lastFragment.optionDialogListener
+        }
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        this.optionDialogListener = null
     }
 
     override fun onClick(view: View) {
@@ -70,12 +86,20 @@ class OptionDialogFragment : DialogFragment(), View.OnClickListener {
                             favColor = rbGreen.text.toString().trim()
                         }
                     }
+                    if (optionDialogListener != null) {
+                        optionDialogListener?.onOptionChosen(favColor)
+                    }
+                    dialog.dismiss()
                 }
             }
             R.id.btn_dialog_close -> {
                 dialog.cancel()
             }
         }
+    }
+
+    interface OnOptionDialogListener {
+        fun onOptionChosen(text: String)
     }
 
 }

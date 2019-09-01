@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import io.github.fatimazza.androidbasic.IntentMoveActivity
 
 import io.github.fatimazza.androidbasic.R
@@ -71,5 +72,12 @@ class LastFragment : Fragment(), View.OnClickListener {
             }
         }
     }
+
+    var optionDialogListener: OptionDialogFragment.OnOptionDialogListener =
+        object : OptionDialogFragment.OnOptionDialogListener {
+            override fun onOptionChosen(text: String) {
+                Toast.makeText(activity, text, Toast.LENGTH_SHORT).show()
+            }
+        }
 
 }
