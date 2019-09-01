@@ -16,6 +16,7 @@
         android:id="@+id/btn_last_fragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/to_last_fragment" />
+        android:text="@string/to_last_fragment"
+        android:textAllCaps="false" />
 
 </LinearLayout>
