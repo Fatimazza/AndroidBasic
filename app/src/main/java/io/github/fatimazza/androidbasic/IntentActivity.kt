@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.Button
+import io.github.fatimazza.androidbasic.model.Person
 
 class IntentActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -18,6 +19,9 @@ class IntentActivity : AppCompatActivity(), View.OnClickListener {
 
         val btnMoveWithDta: Button = findViewById(R.id.btn_move_activity_data)
         btnMoveWithDta.setOnClickListener(this)
+
+        val btnMoveWithObject: Button = findViewById(R.id.btn_move_activity_object)
+        btnMoveWithObject.setOnClickListener(this)
 
         val btnDialNumber: Button = findViewById(R.id.btn_dial_number)
         btnDialNumber.setOnClickListener(this)
@@ -34,6 +38,12 @@ class IntentActivity : AppCompatActivity(), View.OnClickListener {
                 moveIntentWithData.putExtra(IntentMoveDataActivity.EXTRA_NAME, "Dicoding Academy")
                 moveIntentWithData.putExtra(IntentMoveDataActivity.EXTRA_AGE, 27)
                 startActivity(moveIntentWithData)
+            }
+            R.id.btn_move_activity_object -> {
+                val person = Person("Izza", 27, "mail@gmail.com", "Yogya")
+                val moveIntentWithObject = Intent(this, IntentMoveObjectActivity::class.java)
+                    .apply { putExtra(IntentMoveObjectActivity.EXTRA_PERSON, person) }
+                startActivity(moveIntentWithObject)
             }
             R.id.btn_dial_number -> {
                 val phoneNumber = "081234567890"
