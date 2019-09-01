@@ -1,5 +1,6 @@
 package io.github.fatimazza.androidbasic
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
@@ -15,11 +16,16 @@ class IntentMoveForResultActivity : AppCompatActivity(), View.OnClickListener {
     private val btnChoose: Button
         get() = btn_choose
 
+    companion object {
+        const val EXTRA_VALUE = "extra_value"
+        const val RESULT_CODE = 110
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_intent_move_result)
 
-        rgNumber.setOnClickListener(this)
+        btnChoose.setOnClickListener(this)
     }
 
     override fun onClick(view: View) {
@@ -32,6 +38,11 @@ class IntentMoveForResultActivity : AppCompatActivity(), View.OnClickListener {
                     R.id.rb_150 -> value = 150
                     R.id.rb_200 -> value = 200
                 }
+                val resultIntent = Intent().apply {
+                    putExtra(EXTRA_VALUE, value)
+                }
+                setResult(RESULT_CODE, resultIntent)
+                finish()
             }
         }
     }

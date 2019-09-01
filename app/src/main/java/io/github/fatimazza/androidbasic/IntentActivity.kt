@@ -11,6 +11,9 @@ import io.github.fatimazza.androidbasic.model.Person
 
 class IntentActivity : AppCompatActivity(), View.OnClickListener {
 
+    private lateinit var tvResult: TextView
+    private val REQUEST_CODE = 110;
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_intent)
@@ -30,7 +33,7 @@ class IntentActivity : AppCompatActivity(), View.OnClickListener {
         val btnMoveForResult: Button = findViewById(R.id.btn_move_for_result)
         btnMoveForResult.setOnClickListener(this)
 
-        val tvResult: TextView = findViewById(R.id.tv_result)
+        tvResult = findViewById(R.id.tv_result)
     }
 
     override fun onClick(view: View) {
@@ -57,7 +60,19 @@ class IntentActivity : AppCompatActivity(), View.OnClickListener {
                 startActivity(dialPhoneIntent)
             }
             R.id.btn_move_for_result -> {
+                val moveIntentForResult = Intent(this, IntentMoveForResultActivity::class.java)
+                startActivityForResult(moveIntentForResult, REQUEST_CODE)
+            }
+        }
+    }
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == REQUEST_CODE) {
+            if (resultCode == IntentMoveForResultActivity.RESULT_CODE) {
+                val selectedValue = data?.getIntExtra(IntentMoveForResultActivity.EXTRA_VALUE, 0)
+                tvResult.text = "Hasil: $selectedValue"
             }
         }
     }
