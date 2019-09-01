@@ -66,5 +66,11 @@
     <string name="show_dialog">Show Dialog</string>
     <string name="your_message">Your Message: - </string>
     <string name="last_name">Hi, -</string>
+    <string name="close">Close</string>
+    <string name="choose_color">Pilih Warna Favorit Anda:</string>
+    <string name="blue">Blue</string>
+    <string name="purple">Purple</string>
+    <string name="red">Red</string>
+    <string name="green">Green</string>
 
 </resources>
