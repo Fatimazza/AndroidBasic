@@ -7,4 +7,38 @@
     android:padding="@dimen/activity_horizontal_margin"
     tools:context=".fragment.LastFragment">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="@string/hello_this_is_last_fragment" />
+
+    <TextView
+        android:id="@+id/tv_last_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="@string/last_name" />
+
+    <TextView
+        android:id="@+id/tv_last_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="@string/your_message" />
+
+    <Button
+        android:id="@+id/btn_other_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/to_other_activity"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_show_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/show_dialog"
+        android:textAllCaps="false" />
+
 </LinearLayout>

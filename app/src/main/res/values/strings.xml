@@ -61,5 +61,10 @@
     <string name="to_other_fragment">To Other Fragment</string>
     <string name="hello_this_is_other_fragment">Hello, this is Other Fragment</string>
     <string name="to_last_fragment">To Last Fragment</string>
+    <string name="hello_this_is_last_fragment">Hello, this is Last Fragment</string>
+    <string name="to_other_activity">To Other Activity</string>
+    <string name="show_dialog">Show Dialog</string>
+    <string name="your_message">Your Message: - </string>
+    <string name="last_name">Hi, -</string>
 
 </resources>
