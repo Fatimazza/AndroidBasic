@@ -47,14 +47,33 @@ class OptionDialogFragment : DialogFragment(), View.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         btnChoose.setOnClickListener(this)
-        btnChoose.setOnClickListener(this)
+        btnClose.setOnClickListener(this)
     }
 
     override fun onClick(view: View) {
         when (view.id) {
             R.id.btn_dialog_choose -> {
+                val checkedRadioButtonId = rgOptions.checkedRadioButtonId
+                if (checkedRadioButtonId != -1) {
+                    var favColor = ""
+                    when (checkedRadioButtonId) {
+                        R.id.rb_blue -> {
+                            favColor = rbBlue.text.toString().trim()
+                        }
+                        R.id.rb_red -> {
+                            favColor = rbRed.text.toString().trim()
+                        }
+                        R.id.rb_purple -> {
+                            favColor = rbPurple.text.toString().trim()
+                        }
+                        R.id.rb_green -> {
+                            favColor = rbGreen.text.toString().trim()
+                        }
+                    }
+                }
             }
             R.id.btn_dialog_close -> {
+                dialog.cancel()
             }
         }
     }
