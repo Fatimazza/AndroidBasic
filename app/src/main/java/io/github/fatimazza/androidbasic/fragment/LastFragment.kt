@@ -1,6 +1,7 @@
 package io.github.fatimazza.androidbasic.fragment
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import io.github.fatimazza.androidbasic.IntentMoveActivity
 
 import io.github.fatimazza.androidbasic.R
 import kotlinx.android.synthetic.main.fragment_last.*
@@ -58,6 +60,8 @@ class LastFragment : Fragment(), View.OnClickListener {
     override fun onClick(view: View) {
         when (view.id) {
             R.id.btn_other_activity -> {
+                val moveIntent = Intent(activity, IntentMoveActivity::class.java)
+                startActivity(moveIntent)
             }
             R.id.btn_show_dialog -> {
             }
