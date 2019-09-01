@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.Button
+import android.widget.TextView
 import io.github.fatimazza.androidbasic.model.Person
 
 class IntentActivity : AppCompatActivity(), View.OnClickListener {
@@ -25,6 +26,11 @@ class IntentActivity : AppCompatActivity(), View.OnClickListener {
 
         val btnDialNumber: Button = findViewById(R.id.btn_dial_number)
         btnDialNumber.setOnClickListener(this)
+
+        val btnMoveForResult: Button = findViewById(R.id.btn_move_for_result)
+        btnMoveForResult.setOnClickListener(this)
+
+        val tvResult: TextView = findViewById(R.id.tv_result)
     }
 
     override fun onClick(view: View) {
@@ -49,6 +55,9 @@ class IntentActivity : AppCompatActivity(), View.OnClickListener {
                 val phoneNumber = "081234567890"
                 val dialPhoneIntent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:$phoneNumber"))
                 startActivity(dialPhoneIntent)
+            }
+            R.id.btn_move_for_result -> {
+
             }
         }
     }
