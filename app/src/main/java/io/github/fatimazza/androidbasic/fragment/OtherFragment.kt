@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 
 import io.github.fatimazza.androidbasic.R
+import io.github.fatimazza.androidbasic.fragment.LastFragment.Companion.message
 import kotlinx.android.synthetic.main.fragment_other.*
 
 class OtherFragment : Fragment(), View.OnClickListener {
@@ -34,6 +35,15 @@ class OtherFragment : Fragment(), View.OnClickListener {
                 val fragmentManager = fragmentManager
                 val fragmentTransaction = fragmentManager?.beginTransaction()
                 val lastFragment = LastFragment()
+
+                val bundle = Bundle()
+                bundle.putString(LastFragment.EXTRA_NAME_FRAGMENT, "Hi, Izza")
+                val hiddenMessage = "Your Message: Hi, Za, pakabar nich?"
+
+                lastFragment.apply {
+                    arguments = bundle
+                    message = hiddenMessage
+                }
 
                 fragmentTransaction?.let {
                     it.replace(R.id.frame_container, lastFragment)

@@ -27,6 +27,12 @@ class LastFragment : Fragment(), View.OnClickListener {
     private val btnDialog: Button
         get() = btn_show_dialog
 
+    companion object {
+        const val EXTRA_NAME_FRAGMENT = "extra_name_fragment"
+
+        var message: String = ""
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,6 +45,14 @@ class LastFragment : Fragment(), View.OnClickListener {
 
         btnOtherActivity.setOnClickListener(this)
         btnDialog.setOnClickListener(this)
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        val name = arguments?.getString(EXTRA_NAME_FRAGMENT)
+        tvName.text = name
+        tvMessage.text = message
     }
 
     override fun onClick(view: View) {
