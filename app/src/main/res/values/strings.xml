@@ -59,5 +59,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hello_home_fragment">Hello, this is Home Fragment</string>
     <string name="to_other_fragment">To Other Fragment</string>
+    <string name="hello_this_is_other_fragment">Hello, this is Other Fragment</string>
 
 </resources>
