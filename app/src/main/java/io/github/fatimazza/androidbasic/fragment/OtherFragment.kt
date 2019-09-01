@@ -31,6 +31,15 @@ class OtherFragment : Fragment(), View.OnClickListener {
     override fun onClick(view: View) {
         when (view.id) {
             R.id.btn_last_fragment -> {
+                val fragmentManager = fragmentManager
+                val fragmentTransaction = fragmentManager?.beginTransaction()
+                val lastFragment = LastFragment()
+
+                fragmentTransaction?.let {
+                    it.replace(R.id.frame_container, lastFragment)
+                    it.addToBackStack(null)
+                    it.commit()
+                }
             }
         }
     }
