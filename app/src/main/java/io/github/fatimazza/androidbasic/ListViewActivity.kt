@@ -15,11 +15,18 @@ class ListViewActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list_view)
 
+        loadListArrayAdapter()
+    }
+
+    private fun loadListArrayAdapter() {
         val dataName = arrayOf(
-            "Cut Nyak Dien", "Ki Hajar Dewantara", "Moh Yamin", "Patimura", "R A Kartini", "Sukarno"
+            "Cut Nyak Dien", "Ki Hajar Dewantara", "Moh Yamin",
+            "Patimura", "R A Kartini", "Sukarno"
         )
 
-        val adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, dataName)
+        val adapter = ArrayAdapter<String>(
+            this, android.R.layout.simple_list_item_1, dataName
+        )
         listView.adapter = adapter
     }
 }
