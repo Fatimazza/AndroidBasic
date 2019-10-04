@@ -3,7 +3,6 @@ package io.github.fatimazza.androidbasic
 import android.content.Context
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ListView
@@ -49,15 +48,12 @@ class ListViewActivity : AppCompatActivity() {
     }
 
     private fun setItemClickListener(listView: ListView) {
-        listView.onItemClickListener = object : AdapterView.OnItemClickListener {
-            override fun onItemClick(
-                adapterView: AdapterView<*>?, view: View?, i: Int, l: Long
-            ) {
+        listView.onItemClickListener =
+            AdapterView.OnItemClickListener { _, _, index, _ ->
                 Toast.makeText(
-                    this@ListViewActivity, list.get(i).name,
+                    this@ListViewActivity, list.get(index).name,
                     Toast.LENGTH_LONG
                 ).show()
             }
-        }
     }
 }
