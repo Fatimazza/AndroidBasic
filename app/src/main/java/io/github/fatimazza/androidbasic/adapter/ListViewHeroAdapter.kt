@@ -5,8 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
-import android.widget.ImageView
-import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import io.github.fatimazza.androidbasic.R
@@ -38,20 +36,17 @@ class ListViewHeroAdapter(val context: Context, val listHero: ArrayList<Hero>) :
         return viewLayout
     }
 
-    private inner class ViewHolder(view: View) {
-
-        private val txtName: TextView = view.tv_item_name
-        private val txtDescription: TextView = view.tv_item_origin
-        private val imgPhoto: ImageView = view.img_item_photo
-
+    private inner class ViewHolder(private val view: View) {
         fun bind(context: Context, hero: Hero) {
-            txtName.text = hero.name
-            txtDescription.text = hero.origin
+            with(view) {
+                tv_item_name.text = hero.name
+                tv_item_origin.text = hero.origin
 
-            Glide.with(context)
-                .load(hero.photo)
-                .apply(RequestOptions().override(55, 55))
-                .into(imgPhoto)
+                Glide.with(context)
+                    .load(hero.photo)
+                    .apply(RequestOptions().override(55, 55))
+                    .into(img_item_photo)
+            }
         }
     }
 }
