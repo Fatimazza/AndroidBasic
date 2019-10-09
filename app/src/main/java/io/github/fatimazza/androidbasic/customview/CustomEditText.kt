@@ -5,6 +5,8 @@ import android.graphics.Canvas
 import android.graphics.drawable.Drawable
 import android.support.v4.content.res.ResourcesCompat
 import android.support.v7.widget.AppCompatEditText
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.AttributeSet
 import android.view.View
 import io.github.fatimazza.androidbasic.R
@@ -32,6 +34,22 @@ class CustomEditText : AppCompatEditText {
     private fun init() {
         imgClearButton =
             ResourcesCompat.getDrawable(resources, R.drawable.ic_close_black_24dp, null) as Drawable
+
+        addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+                //Do Nothing
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                //Do Nothing
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                when {
+                    s.toString().isNotEmpty() -> showClearButton()
+                }
+            }
+        })
     }
 
     private fun hideClearButton() {
