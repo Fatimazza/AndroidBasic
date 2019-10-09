@@ -42,4 +42,42 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1" />
 
+    <TextView
+        android:id="@+id/tv_text_price"
+        style="@style/TextContent.Black"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/dummy_value"
+        android:textSize="32sp"
+        app:layout_constraintStart_toStartOf="@id/tv_text_stock"
+        app:layout_constraintTop_toBottomOf="@+id/iv_image_phone" />
+
+    <TextView
+        android:id="@+id/tv_text_stock"
+        style="@style/TextContent.Subtitle"
+        android:layout_width="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/stock"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_text_description"
+        app:layout_constraintTop_toBottomOf="@+id/tv_text_price" />
+
+    <TextView
+        android:id="@+id/tv_text_description"
+        style="@style/TextContent"
+        android:layout_width="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:lineSpacingMultiplier="1"
+        android:text="@string/content_text"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_text_stock" />
+
 </android.support.constraint.ConstraintLayout>
