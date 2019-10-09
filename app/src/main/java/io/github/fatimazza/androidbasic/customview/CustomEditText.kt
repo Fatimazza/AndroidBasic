@@ -8,7 +8,9 @@ import android.support.v7.widget.AppCompatEditText
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.AttributeSet
+import android.view.MotionEvent
 import android.view.View
+import android.view.View.OnTouchListener
 import io.github.fatimazza.androidbasic.R
 
 class CustomEditText : AppCompatEditText {
@@ -47,8 +49,61 @@ class CustomEditText : AppCompatEditText {
             override fun onTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
                 when {
                     s.toString().isNotEmpty() -> showClearButton()
+                    else -> hideClearButton()
                 }
             }
+        })
+
+        setOnTouchListener(OnTouchListener { view, event ->
+            if (compoundDrawablesRelative[2] != null) {
+                val clearButtonStart: Float
+                val clearButtonEnd: Float
+                var isClearButtonClicked = false
+
+                when (layoutDirection) {
+                    View.LAYOUT_DIRECTION_RTL -> {
+                        clearButtonEnd = (imgClearButton.intrinsicWidth + paddingStart).toFloat()
+                        when {
+                            event.x < clearButtonEnd -> isClearButtonClicked = true
+                        }
+                    }
+                    else -> {
+                        clearButtonStart =
+                            (width - paddingEnd - imgClearButton.intrinsicWidth).toFloat()
+                        when {
+                            event.x > clearButtonStart -> isClearButtonClicked = true
+                        }
+                    }
+                }
+                when {
+                    isClearButtonClicked -> when {
+                        event.action == MotionEvent.ACTION_DOWN -> {
+                            imgClearButton = ResourcesCompat.getDrawable(
+                                resources,
+                                R.drawable.ic_close_black_24dp,
+                                null
+                            ) as Drawable
+                            showClearButton()
+                            return@OnTouchListener true
+                        }
+                        event.action == MotionEvent.ACTION_UP -> {
+                            imgClearButton = ResourcesCompat.getDrawable(
+                                resources,
+                                R.drawable.ic_close_black_24dp,
+                                null
+                            ) as Drawable
+                            when {
+                                text != null -> text?.clear()
+                            }
+                            hideClearButton()
+                            return@OnTouchListener true
+                        }
+                        else -> return@OnTouchListener false
+                    }
+                    else -> return@OnTouchListener false
+                }
+            }
+            false
         })
     }
 
