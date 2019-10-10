@@ -20,17 +20,37 @@ class RecyclerViewActivity : AppCompatActivity() {
     private var list: ArrayList<Hero> = arrayListOf()
 
     private var title: String = "Mode List"
+    private var mode: Int = 0
+
+    companion object {
+        private const val STATE_TITLE = "state_title"
+        private const val STATE_LIST = "state_list"
+        private const val STATE_MODE = "state_mode"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recycler_view)
-        setActionBarTitle(title)
 
         rvHeroes = findViewById(R.id.rv_hero)
         rvHeroes.setHasFixedSize(true)
 
-        list.addAll(getListHero())
-        showRecyclerList()
+        if (savedInstanceState == null) {
+            setActionBarTitle(title)
+            mode = R.id.action_list
+            list.addAll(getListHero())
+            showRecyclerList()
+        } else {
+            title = savedInstanceState.getString(STATE_TITLE).toString()
+            val stateList = savedInstanceState.getParcelableArrayList<Hero>(STATE_LIST)
+            val stateMode = savedInstanceState.getInt(STATE_MODE)
+
+            setActionBarTitle(title)
+            if (stateList != null) {
+                list.addAll(stateList)
+            }
+            setMode(stateMode)
+        }
     }
 
     private fun getListHero(): ArrayList<Hero> {
@@ -48,6 +68,13 @@ class RecyclerViewActivity : AppCompatActivity() {
             listHero.add(hero)
         }
         return listHero
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString(STATE_TITLE, title)
+        outState.putParcelableArrayList(STATE_LIST, list)
+        outState.putInt(STATE_MODE, mode)
     }
 
     private fun showRecyclerList() {
@@ -98,20 +125,19 @@ class RecyclerViewActivity : AppCompatActivity() {
         when (selectedMode) {
             R.id.action_list -> {
                 title = "Mode List"
-                setActionBarTitle(title)
                 showRecyclerList()
             }
             R.id.action_grid -> {
                 title = "Mode Grid"
-                setActionBarTitle(title)
                 showRecyclerGrid()
             }
             R.id.action_cardview -> {
                 title = "Mode CardView"
-                setActionBarTitle(title)
                 showRecyclerCardview()
             }
         }
+        mode = selectedMode
+        setActionBarTitle(title)
     }
 
     private fun setActionBarTitle(title: String) {
