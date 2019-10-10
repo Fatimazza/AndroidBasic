@@ -84,7 +84,7 @@ class RecyclerViewActivity : AppCompatActivity() {
 
         listHeroAdapter.setOnItemClickCallback(object : ListHeroAdapter.OnItemClickCallback {
             override fun onItemClicked(data: Hero) {
-                showSelectedHer(data)
+                showSelectedHero(data)
             }
         })
     }
@@ -96,7 +96,7 @@ class RecyclerViewActivity : AppCompatActivity() {
 
         gridHeroAdapter.setOnItemClickCallback(object : GridHeroAdapter.OnItemClickCallback {
             override fun onItemClick(data: Hero) {
-                showSelectedHer(data)
+                showSelectedHero(data)
             }
         })
     }
@@ -107,7 +107,7 @@ class RecyclerViewActivity : AppCompatActivity() {
         rvHeroes.adapter = cardHeroAdapter
     }
 
-    private fun showSelectedHer(hero: Hero) {
+    private fun showSelectedHero(hero: Hero) {
         Toast.makeText(this, "You choose " + hero.name, Toast.LENGTH_SHORT).show()
     }
 
