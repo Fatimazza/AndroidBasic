@@ -11,13 +11,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".CustomViewActivity" />
-        <activity android:name=".RecyclerViewActivity">
+        <activity android:name=".ActionBarActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".RecyclerViewActivity" />
         <activity android:name=".ViewsInConstraintActivity" />
         <activity android:name=".ListViewActivity" />
         <activity android:name=".FragmentActivity" />
