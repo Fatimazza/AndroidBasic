@@ -113,6 +113,7 @@
     <string name="menu_show_activity">The menu shows Activity</string>
     <string name="menu_show_fragment">The menu shows Fragment</string>
     <string name="menu_search">Search</string>
+    <string name="menu_search_hint">Input keyword … </string>
     <string name="menu_fragment">Menu Fragment</string>
     <string name="menu_activity">Menu Activity</string>
 
