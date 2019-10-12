@@ -7,7 +7,9 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import io.github.fatimazza.androidbasic.R
 
 class HomeNavFragment : Fragment() {
@@ -26,6 +28,10 @@ class HomeNavFragment : Fragment() {
         homeViewModel.text.observe(this, Observer {
             textView.text = it
         })
+        val btnHomeNav: Button = root.findViewById(R.id.btn_home_nav)
+        btnHomeNav.setOnClickListener {
+            Toast.makeText(requireContext(), "It's clicked", Toast.LENGTH_SHORT).show()
+        }
         return root
     }
 }
