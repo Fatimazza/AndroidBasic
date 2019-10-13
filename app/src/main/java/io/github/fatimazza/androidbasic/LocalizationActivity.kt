@@ -6,12 +6,29 @@ import android.provider.Settings
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import kotlinx.android.synthetic.main.activity_localization.*
 
 class LocalizationActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_localization)
+
+        displayLocalizedText()
+    }
+
+    private fun displayLocalizedText() {
+        val pokeCount = 3
+        val hello =
+            resources.getString(R.string.hello_world, "Narendra Wicaksono", pokeCount, "Izza")
+        tv_hello.text = hello
+
+        val songCount = 5
+        val pluralText =
+            resources.getQuantityString(R.plurals.numberOfSongsAvailable, songCount, songCount)
+        tv_plural.text = pluralText
+
+        tv_xliff.text = resources.getString(R.string.app_homeurl)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
