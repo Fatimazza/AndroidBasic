@@ -10,13 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LocalizationActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".LocalizationActivity" />
         <activity
             android:name=".BottomNavigationActivity"
             android:label="@string/title_activity_bottom_navigation" />
@@ -32,7 +26,13 @@
         <activity android:name=".FragmentActivity" />
         <activity android:name=".IntentMoveForResultActivity" />
         <activity android:name=".IntentMoveObjectActivity" />
-        <activity android:name=".ViewsActivity" />
+        <activity android:name=".ViewsActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".IntentActivity" />
         <activity android:name=".IntentMoveDataActivity" />
         <activity android:name=".IntentMoveActivity" />
