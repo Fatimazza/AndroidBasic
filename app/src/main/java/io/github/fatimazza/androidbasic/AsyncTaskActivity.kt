@@ -57,7 +57,7 @@ class AsyncTaskActivity : AppCompatActivity(), MyAsyncCallback {
             var output: String? = null
             try {
                 val input = params[0]
-                output = "$input progress Belajar"
+                output = "$input ... Done! Selamat Belajar!"
                 Thread.sleep(2000)
             } catch (e: Exception) {
                 Log.d(LOG_ASYNC, e.message)
