@@ -150,4 +150,9 @@
     </string>
     <string name="change_language_settings">Ubah Pengaturan Bahasa</string>
 
+    <string name="async_status" translatable="false">Status Aplikasi</string>
+    <string name="async_status_pre" translatable="false">Status : onPreExecute</string>
+    <string name="async_status_post" translatable="false">Status : onPostExecute</string>
+    <string name="async_desc" translatable="false">Description</string>
+
 </resources>
