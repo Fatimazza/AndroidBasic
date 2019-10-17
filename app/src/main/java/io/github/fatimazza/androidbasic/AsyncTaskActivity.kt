@@ -4,21 +4,34 @@ import android.os.AsyncTask
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import kotlinx.android.synthetic.main.activity_async_task.*
 import java.lang.ref.WeakReference
 
 class AsyncTaskActivity : AppCompatActivity(), MyAsyncCallback {
 
+    companion object {
+        private val LOG_ASYNC = "Demo Async Main"
+        private const val INPUT_STRING = "Halo, this is AsyncTask demo!"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_async_task)
+
+        val demoAsync = DemoAsync(this)
+        demoAsync.execute(INPUT_STRING)
     }
 
     override fun onPreExecute() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        Log.d(LOG_ASYNC, "status: onPreExecute - Main")
+        tv_async_status.text = resources.getString(R.string.async_status_pre)
+        tv_async_desc.text = INPUT_STRING
     }
 
-    override fun onPostExecute(text: String) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun onPostExecute(result: String) {
+        Log.d(LOG_ASYNC, "status: onPostExecute - Main")
+        tv_async_status.text = resources.getString(R.string.async_status_post)
+        tv_async_desc.text = result
     }
 
     private class DemoAsync(val listener: MyAsyncCallback) : AsyncTask<String, Void, String>() {
