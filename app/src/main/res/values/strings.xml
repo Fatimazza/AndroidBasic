@@ -155,4 +155,9 @@
     <string name="async_status_post" translatable="false">Status : onPostExecute</string>
     <string name="async_desc" translatable="false">Description</string>
 
+    <string name="service_start" translatable="false">Start Service</string>
+    <string name="service_intent_start" translatable="false">Start Intent Service</string>
+    <string name="service_bound_start" translatable="false">Start Bound Service</string>
+    <string name="service_bound_stop" translatable="false">Stop bound Service</string>
+
 </resources>
