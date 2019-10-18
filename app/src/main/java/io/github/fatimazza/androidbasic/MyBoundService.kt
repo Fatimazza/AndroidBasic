@@ -29,8 +29,24 @@ class MyBoundService : Service() {
         }
     }
 
+    override fun onCreate() {
+        super.onCreate()
+    }
+
     override fun onBind(intent: Intent): IBinder {
         TODO("Return the communication channel to the service.")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+    }
+
+    override fun onUnbind(intent: Intent?): Boolean {
+        return super.onUnbind(intent)
+    }
+
+    override fun onRebind(intent: Intent?) {
+        super.onRebind(intent)
     }
 
     internal inner class MyBinder : Binder() {
