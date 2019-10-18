@@ -21,9 +21,12 @@ class MyService : Service() {
 
     //onStartCommand() used to start the Started Service
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+        //run in UI Thread
         Log.d(TAG, "on Start Command: Service is started")
+        //need to create Background Thread
         GlobalScope.launch {
             delay(3000)
+            //need to stop the Service
             stopSelf()
             Log.d(TAG, "stopSelf: Service is stopped")
         }
