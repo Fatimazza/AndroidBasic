@@ -29,27 +29,42 @@ class MyBoundService : Service() {
         }
     }
 
+    //called first
     override fun onCreate() {
         super.onCreate()
+        Log.d(TAG, "onCreate: ")
     }
 
+    //called after onCreate
     override fun onBind(intent: Intent): IBinder {
-        TODO("Return the communication channel to the service.")
+        Log.d(TAG, "onBind: ")
+        //countdown timer is starting
+        timer.start()
+        //the Service is running, bound to Activity which call it
+        return myBinder
     }
 
+    //called after onUnbind
     override fun onDestroy() {
         super.onDestroy()
+        //deleting Bound Service class from memory
+        Log.d(TAG, "onDestroy: ")
     }
 
     override fun onUnbind(intent: Intent?): Boolean {
+        Log.d(TAG, "onUnbind: ")
+        timer.cancel()
+        //unbind Service from its Activity
         return super.onUnbind(intent)
     }
 
     override fun onRebind(intent: Intent?) {
         super.onRebind(intent)
+        Log.d(TAG, "onRebind: ")
     }
 
     internal inner class MyBinder : Binder() {
+        //call and bind Service class
         val getService: MyBoundService = this@MyBoundService
     }
 
