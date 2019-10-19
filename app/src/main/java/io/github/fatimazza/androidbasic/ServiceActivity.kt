@@ -18,12 +18,14 @@ class ServiceActivity : AppCompatActivity(), View.OnClickListener {
     private val serviceConnection = object : ServiceConnection {
         //Callback when connected to Service
         override fun onServiceConnected(name: ComponentName, service: IBinder) {
-            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            val myBinder = service as MyBoundService.MyBinder
+            boundService = myBinder.getService
+            serviceBound = true
         }
 
         //Callback when disconnected from Service
         override fun onServiceDisconnected(name: ComponentName) {
-            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            serviceBound = false
         }
     }
 
