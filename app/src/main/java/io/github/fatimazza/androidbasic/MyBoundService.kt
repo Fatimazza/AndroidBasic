@@ -37,6 +37,7 @@ class MyBoundService : Service() {
 
     //called after onCreate
     override fun onBind(intent: Intent): IBinder {
+        //run in UI Thread
         Log.d(TAG, "onBind: ")
         //countdown timer is starting
         timer.start()

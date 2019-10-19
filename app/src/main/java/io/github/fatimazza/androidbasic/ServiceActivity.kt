@@ -1,6 +1,7 @@
 package io.github.fatimazza.androidbasic
 
 import android.content.ComponentName
+import android.content.Context
 import android.content.Intent
 import android.content.ServiceConnection
 import android.os.Bundle
@@ -51,11 +52,23 @@ class ServiceActivity : AppCompatActivity(), View.OnClickListener {
                 startService(startIntentService)
             }
             R.id.btn_start_bound_service -> {
-
+                val boundServiceIntent = Intent(this, MyBoundService::class.java)
+                //bind Service to Activity
+                bindService(boundServiceIntent, serviceConnection, Context.BIND_AUTO_CREATE)
             }
             R.id.btn_stop_bound_service -> {
-                
+                //unbind Service from Activity
+                unbindService(serviceConnection)
             }
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        if (serviceBound) {
+            //avoid memory leaks
+            //unbind Service from Activity
+            unbindService(serviceConnection)
         }
     }
 }
