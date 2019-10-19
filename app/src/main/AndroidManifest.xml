@@ -23,13 +23,14 @@
             android:enabled="true"
             android:exported="true"></service>
 
-        <activity android:name=".ServiceActivity">
+        <activity android:name=".BroadcastReceiverActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ServiceActivity" />
         <activity android:name=".AsyncTaskActivity" />
         <activity android:name=".LocalizationActivity" />
         <activity
