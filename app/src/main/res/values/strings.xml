@@ -1,6 +1,6 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name" translatable="false">AndroidBasic</string>
-    
+
     <string name="panjang">Panjang</string>
     <string name="lebar">Lebar</string>
     <string name="tinggi">Tinggi</string>
@@ -133,7 +133,7 @@
     <string name="menu_send">Kirim Pesan</string>
     <string name="nav_home_button">Home Button</string>
     <string name="nav_menu_communicate">Komunikasi</string>
-    
+
     <string name="title_activity_bottom_navigation">BottomNavigationActivity</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
@@ -162,5 +162,7 @@
 
     <string name="broadcast_receiver_sms_text" translatable="false">SMS Receiver Demo</string>
     <string name="broadcast_receiver_sms_permission" translatable="false">Check SMS Permission</string>
+    <string name="broadcast_receiver_sms_from" translatable="false">From: %1$s</string>
+    <string name="broadcast_receiver_sms_message" translatable="false">Message: %1$s</string>
 
 </resources>
