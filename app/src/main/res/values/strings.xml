@@ -160,4 +160,7 @@
     <string name="service_bound_start" translatable="false">Start Bound Service</string>
     <string name="service_bound_stop" translatable="false">Stop bound Service</string>
 
+    <string name="broadcast_receiver_sms_text" translatable="false">SMS Receiver Demo</string>
+    <string name="broadcast_receiver_sms_permission" translatable="false">Check SMS Permission</string>
+
 </resources>
