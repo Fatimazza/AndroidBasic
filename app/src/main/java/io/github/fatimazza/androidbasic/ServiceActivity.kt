@@ -1,12 +1,31 @@
 package io.github.fatimazza.androidbasic
 
+import android.content.ComponentName
 import android.content.Intent
+import android.content.ServiceConnection
 import android.os.Bundle
+import android.os.IBinder
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import kotlinx.android.synthetic.main.activity_service.*
 
 class ServiceActivity : AppCompatActivity(), View.OnClickListener {
+
+    private var serviceBound = false
+    private lateinit var boundService: MyBoundService
+
+    //Listener to receive callbacks from Service Connection
+    private val serviceConnection = object : ServiceConnection {
+        //Callback when connected to Service
+        override fun onServiceConnected(name: ComponentName, service: IBinder) {
+            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        }
+
+        //Callback when disconnected from Service
+        override fun onServiceDisconnected(name: ComponentName) {
+            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
