@@ -23,7 +23,9 @@
             android:enabled="true"
             android:exported="true"></service>
 
-        <activity android:name=".SMSReceiverActivity" />
+        <activity
+            android:name=".SMSReceiverActivity"
+            android:theme="@style/SmsReceiverTheme" />
         <activity android:name=".BroadcastReceiverActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
