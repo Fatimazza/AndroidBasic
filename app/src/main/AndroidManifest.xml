@@ -35,9 +35,9 @@
             android:name=".MyIntentService"
             android:exported="false" />
         <service
-            android:name=".MyService"
+            android:name=".service.MyService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
 
         <activity
             android:name=".SMSReceiverActivity"
