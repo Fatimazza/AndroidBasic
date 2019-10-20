@@ -164,5 +164,6 @@
     <string name="broadcast_receiver_sms_permission" translatable="false">Check SMS Permission</string>
     <string name="broadcast_receiver_sms_from" translatable="false">From: %1$s</string>
     <string name="broadcast_receiver_sms_message" translatable="false">Message: %1$s</string>
+    <string name="broadcast_receiver_sms_dialog_title" translatable="false">Incoming Message</string>
 
 </resources>
