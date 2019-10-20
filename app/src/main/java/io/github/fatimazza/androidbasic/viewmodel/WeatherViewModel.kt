@@ -26,7 +26,7 @@ class WeatherViewModel : ViewModel() {
         val url =
             "https://api.openweathermap.org/data/2.5/group?id=$city&units=metric&appid=$API_KEY"
 
-        //request API
+        //request API asynchronously
         client.get(url, object : AsyncHttpResponseHandler() {
             override fun onSuccess(
                 statusCode: Int,
@@ -34,10 +34,13 @@ class WeatherViewModel : ViewModel() {
                 responseBody: ByteArray
             ) {
                 try {
+                    //get data list JSON Array
                     val result = String(responseBody)
                     val responseObject = JSONObject(result)
                     val list = responseObject.getJSONArray("list")
 
+                    //convert JSON Object to readable data
+                    //data in JSON Object is read by its KEY, exp. id, name
                     for (i in 0 until list.length()) {
                         val weather = list.getJSONObject(i)
                         val weatherItem = Weather()
