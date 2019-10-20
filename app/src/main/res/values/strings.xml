@@ -168,4 +168,11 @@
     <string name="broadcast_receiver_download_text" translatable="false">Download Receiver Demo</string>
     <string name="broadcast_receiver_download_button" translatable="false">Download a File</string>
 
+    <string name="weather_description" translatable="false">Deskripsi</string>
+    <string name="weather_temperature" translatable="false">Temperatur</string>
+    <string name="weather_city" translatable="false">Nama Kota</string>
+    <string name="weather_insert_city" translatable="false">Masukkan id kota misal Jakarta = 1642911</string>
+    <string name="weather_search" translatable="false">Cari</string>
+    <string name="weather_id_jakarta_bandung_semarang" translatable="false">1642911,1650357,1627896</string>
+
 </resources>
