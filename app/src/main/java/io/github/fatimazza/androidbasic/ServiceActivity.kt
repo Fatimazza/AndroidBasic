@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.os.IBinder
 import android.support.v7.app.AppCompatActivity
 import android.view.View
+import io.github.fatimazza.androidbasic.service.MyBoundService
 import kotlinx.android.synthetic.main.activity_service.*
 
 class ServiceActivity : AppCompatActivity(), View.OnClickListener {
