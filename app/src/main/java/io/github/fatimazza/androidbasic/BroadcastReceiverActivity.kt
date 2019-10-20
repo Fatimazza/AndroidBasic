@@ -12,6 +12,7 @@ import kotlinx.android.synthetic.main.activity_broadcast_receiver.*
 class BroadcastReceiverActivity : AppCompatActivity(), View.OnClickListener {
 
     companion object {
+        const val ACTION_DOWNLOAD_STATUS = "download_status"
         private const val SMS_REQUEST_CODE = 101
     }
 
