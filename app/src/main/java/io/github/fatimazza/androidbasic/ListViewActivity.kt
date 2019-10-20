@@ -2,11 +2,11 @@ package io.github.fatimazza.androidbasic
 
 import android.content.Context
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import io.github.fatimazza.androidbasic.adapter.ListViewHeroAdapter
 import io.github.fatimazza.androidbasic.model.Hero
 import io.github.fatimazza.androidbasic.model.HeroesData

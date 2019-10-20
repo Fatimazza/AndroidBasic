@@ -2,12 +2,11 @@ package io.github.fatimazza.androidbasic.fragment
 
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-
+import androidx.fragment.app.Fragment
 import io.github.fatimazza.androidbasic.R
 import io.github.fatimazza.androidbasic.fragment.LastFragment.Companion.message
 import kotlinx.android.synthetic.main.fragment_other.*

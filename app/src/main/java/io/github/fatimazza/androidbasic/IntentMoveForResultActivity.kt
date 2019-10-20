@@ -2,10 +2,10 @@ package io.github.fatimazza.androidbasic
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.Button
 import android.widget.RadioGroup
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_intent_move_result.*
 
 class IntentMoveForResultActivity : AppCompatActivity(), View.OnClickListener {

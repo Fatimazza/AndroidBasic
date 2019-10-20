@@ -3,14 +3,14 @@ package io.github.fatimazza.androidbasic.customview
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.drawable.Drawable
-import android.support.v4.content.res.ResourcesCompat
-import android.support.v7.widget.AppCompatEditText
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
 import android.view.View.OnTouchListener
+import androidx.appcompat.widget.AppCompatEditText
+import androidx.core.content.res.ResourcesCompat
 import io.github.fatimazza.androidbasic.R
 
 class CustomEditText : AppCompatEditText {

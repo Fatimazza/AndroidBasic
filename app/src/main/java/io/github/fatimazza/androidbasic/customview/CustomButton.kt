@@ -3,11 +3,11 @@ package io.github.fatimazza.androidbasic.customview
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.drawable.Drawable
-import android.support.v4.content.ContextCompat
-import android.support.v4.content.res.ResourcesCompat
-import android.support.v7.widget.AppCompatButton
 import android.util.AttributeSet
 import android.view.Gravity.CENTER
+import androidx.appcompat.widget.AppCompatButton
+import androidx.core.content.ContextCompat
+import androidx.core.content.res.ResourcesCompat
 import io.github.fatimazza.androidbasic.R
 
 class CustomButton : AppCompatButton {

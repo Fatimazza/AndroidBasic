@@ -1,10 +1,10 @@
 package io.github.fatimazza.androidbasic
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_custom_view.*
 
 class CustomViewActivity : AppCompatActivity() {

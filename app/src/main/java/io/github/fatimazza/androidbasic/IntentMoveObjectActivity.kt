@@ -1,8 +1,8 @@
 package io.github.fatimazza.androidbasic
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import io.github.fatimazza.androidbasic.model.Person
 
 class IntentMoveObjectActivity : AppCompatActivity() {
@@ -19,7 +19,8 @@ class IntentMoveObjectActivity : AppCompatActivity() {
 
         val person = intent.getParcelableExtra<Person>(EXTRA_PERSON)
 
-        val text = "Name ${person.name}, \nAge ${person.age}, \nEmail ${person.email} \nCity ${person.city}"
+        val text =
+            "Name ${person.name}, \nAge ${person.age}, \nEmail ${person.email} \nCity ${person.city}"
         tvObjectReceived.text = text
     }
 }

@@ -2,13 +2,13 @@ package io.github.fatimazza.androidbasic.fragment
 
 import android.content.Context
 import android.os.Bundle
-import android.support.v4.app.DialogFragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.RadioButton
 import android.widget.RadioGroup
+import androidx.fragment.app.DialogFragment
 import io.github.fatimazza.androidbasic.R
 import kotlinx.android.synthetic.main.fragment_option_dialog.*
 
@@ -89,11 +89,11 @@ class OptionDialogFragment : DialogFragment(), View.OnClickListener {
                     if (optionDialogListener != null) {
                         optionDialogListener?.onOptionChosen(favColor)
                     }
-                    dialog.dismiss()
+                    dialog?.dismiss()
                 }
             }
             R.id.btn_dialog_close -> {
-                dialog.cancel()
+                dialog?.cancel()
             }
         }
     }
