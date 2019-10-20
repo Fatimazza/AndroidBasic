@@ -9,6 +9,8 @@ import com.loopj.android.http.AsyncHttpResponseHandler
 import cz.msebera.android.httpclient.Header
 import io.github.fatimazza.androidbasic.BuildConfig
 import io.github.fatimazza.androidbasic.model.Weather
+import org.json.JSONObject
+import java.text.DecimalFormat
 
 class WeatherViewModel : ViewModel() {
 
@@ -31,7 +33,33 @@ class WeatherViewModel : ViewModel() {
                 headers: Array<out Header>,
                 responseBody: ByteArray
             ) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                try {
+                    val result = String(responseBody)
+                    val responseObject = JSONObject(result)
+                    val list = responseObject.getJSONArray("list")
+
+                    for (i in 0 until list.length()) {
+                        val weather = list.getJSONObject(i)
+                        val weatherItem = Weather()
+                        weatherItem.id = weather.getInt("id")
+                        weatherItem.name = weather.getString("name")
+                        weatherItem.currentWeather =
+                            weather.getJSONArray("weather").getJSONObject(0).getString("main")
+                        weatherItem.description =
+                            weather.getJSONArray("weather").getJSONObject(0)
+                                .getString("description")
+
+                        val tempInKelvin = weather.getJSONObject("main").getDouble("temp")
+                        val tempInCelcius = tempInKelvin - 273
+                        weatherItem.temperature = DecimalFormat("##.##").format(tempInCelcius)
+                        listItems.add(weatherItem)
+                    }
+                    //post realtime latest value from Background Thread
+                    listWeathers.postValue(listItems)
+
+                } catch (e: Exception) {
+                    Log.d("Exception", e.message.toString())
+                }
             }
 
             override fun onFailure(
