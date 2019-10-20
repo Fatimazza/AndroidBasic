@@ -165,5 +165,7 @@
     <string name="broadcast_receiver_sms_from" translatable="false">From: %1$s</string>
     <string name="broadcast_receiver_sms_message" translatable="false">Message: %1$s</string>
     <string name="broadcast_receiver_sms_dialog_title" translatable="false">Incoming Message</string>
+    <string name="broadcast_receiver_download_text" translatable="false">Download Receiver Demo</string>
+    <string name="broadcast_receiver_download_button" translatable="false">Download a File</string>
 
 </resources>

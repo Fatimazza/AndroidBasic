@@ -20,12 +20,16 @@ class BroadcastReceiverActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_broadcast_receiver)
 
         btn_br_sms_permission.setOnClickListener(this)
+        btn_br_download_file.setOnClickListener(this)
     }
 
     override fun onClick(view: View) {
         when {
             view.id == R.id.btn_br_sms_permission -> {
                 PermisionManager.check(this, Manifest.permission.RECEIVE_SMS, SMS_REQUEST_CODE)
+            }
+            view.id == R.id.btn_br_download_file -> {
+                
             }
         }
     }

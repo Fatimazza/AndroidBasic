@@ -19,4 +19,17 @@
         android:layout_height="wrap_content"
         android:text="@string/broadcast_receiver_sms_permission" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/broadcast_receiver_download_text" />
+
+    <Button
+        android:id="@+id/btn_br_download_file"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/broadcast_receiver_download_button" />
+
 </LinearLayout>
