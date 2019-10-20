@@ -1,6 +1,7 @@
 package io.github.fatimazza.androidbasic
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import io.github.fatimazza.androidbasic.adapter.WeatherAdapter
@@ -23,5 +24,13 @@ class WeatherActivity : AppCompatActivity() {
 
         rvWeather.layoutManager = LinearLayoutManager(this)
         rvWeather.adapter = adapter
+    }
+
+    private fun showLoading(state: Boolean) {
+        if (state) {
+            pbLoadingWeather.visibility = View.VISIBLE
+        } else {
+            pbLoadingWeather.visibility = View.GONE
+        }
     }
 }
