@@ -52,7 +52,8 @@ class BroadcastReceiverActivity : AppCompatActivity(), View.OnClickListener {
                 PermisionManager.check(this, Manifest.permission.RECEIVE_SMS, SMS_REQUEST_CODE)
             }
             view.id == R.id.btn_br_download_file -> {
-                
+                val downloadServiceIntent = Intent(this, DownloadService::class.java)
+                startService(downloadServiceIntent)
             }
         }
     }
@@ -72,5 +73,10 @@ class BroadcastReceiverActivity : AppCompatActivity(), View.OnClickListener {
                 }
             }
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        unregisterReceiver(downloadReceiver)
     }
 }
