@@ -15,7 +15,7 @@
         <receiver
             android:name=".receiver.SmsReceiver"
             android:enabled="true"
-            android:exported="true"></receiver>
+            android:exported="true" />
 
         <service
             android:name=".MyBoundService"
