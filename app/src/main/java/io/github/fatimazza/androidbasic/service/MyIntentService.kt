@@ -1,4 +1,4 @@
-package io.github.fatimazza.androidbasic
+package io.github.fatimazza.androidbasic.service
 
 import android.app.IntentService
 import android.content.Intent
