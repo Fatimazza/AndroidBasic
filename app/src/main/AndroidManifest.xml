@@ -39,16 +39,17 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity
-            android:name=".SMSReceiverActivity"
-            android:theme="@style/SmsReceiverTheme" />
-        <activity android:name=".BroadcastReceiverActivity">
+        <activity android:name=".WeatherActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".SMSReceiverActivity"
+            android:theme="@style/SmsReceiverTheme" />
+        <activity android:name=".BroadcastReceiverActivity" />
         <activity android:name=".ServiceActivity" />
         <activity android:name=".AsyncTaskActivity" />
         <activity android:name=".LocalizationActivity" />
