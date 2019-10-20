@@ -23,6 +23,7 @@ class DownloadService : IntentService("DownloadService") {
             }
 
             //broadcast Event to Activity after download is finished
+            //onReceive will be called
             val notifyDownloadFinishIntent =
                 Intent(BroadcastReceiverActivity.ACTION_DOWNLOAD_STATUS)
             sendBroadcast(notifyDownloadFinishIntent)
