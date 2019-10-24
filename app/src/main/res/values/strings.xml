@@ -181,5 +181,7 @@
     <string name="sp_age" translatable="false">Age</string>
     <string name="sp_hobby" translatable="false">Hobby</string>
     <string name="sp_save" translatable="false">Save</string>
+    <string name="sp_hobby_reading" translatable="false">Reading</string>
+    <string name="sp_hobby_else" translatable="false">No</string>
 
 </resources>
