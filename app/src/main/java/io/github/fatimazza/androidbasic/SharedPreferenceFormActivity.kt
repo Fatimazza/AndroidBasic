@@ -1,10 +1,13 @@
 package io.github.fatimazza.androidbasic
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.text.isDigitsOnly
 import io.github.fatimazza.androidbasic.model.SPUserModel
+import io.github.fatimazza.androidbasic.utils.UserPreference
 import kotlinx.android.synthetic.main.activity_shared_preference_form.*
 
 class SharedPreferenceFormActivity : AppCompatActivity(), View.OnClickListener {
@@ -63,9 +66,25 @@ class SharedPreferenceFormActivity : AppCompatActivity(), View.OnClickListener {
                 etPrefHp.error = resources.getString(R.string.sp_field_digit_only)
                 return
             }
-            
 
+            saveUser(name, email, age, handphone, hasReadingHobby)
+            val resultIntent = Intent().putExtra(EXTRA_RESULT, userModel)
+            setResult(RESULT_CODE, resultIntent)
+            finish()
         }
+    }
+
+    private fun saveUser(
+        name: String, email: String, age: String, handphone: String, hasReadingHobby: Boolean
+    ) {
+        val userPreference = UserPreference(this)
+        userModel.name = name
+        userModel.email = email
+        userModel.age = Integer.parseInt(age)
+        userModel.handphone = handphone
+        userModel.hasReadingHobby = hasReadingHobby
+        userPreference.setUser(userModel)
+        Toast.makeText(this, "Data saved", Toast.LENGTH_SHORT).show()
     }
 
     private fun isValidEmail(email: CharSequence): Boolean {
