@@ -79,7 +79,7 @@
             android:text="@string/sp_hobby" />
 
         <RadioGroup
-            android:id="@+id/rgPrefReading"
+            android:id="@+id/rgPrefHobby"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
