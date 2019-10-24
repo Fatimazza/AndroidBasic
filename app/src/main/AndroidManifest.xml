@@ -40,13 +40,14 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".WeatherActivity">
+        <activity android:name=".SharedPreferenceActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".WeatherActivity" />
         <activity
             android:name=".SMSReceiverActivity"
             android:theme="@style/SmsReceiverTheme" />
