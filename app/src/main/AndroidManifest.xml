@@ -40,7 +40,7 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".SharedPreferenceFormActivity"></activity>
+        <activity android:name=".SharedPreferenceFormActivity" />
         <activity android:name=".SharedPreferenceActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
