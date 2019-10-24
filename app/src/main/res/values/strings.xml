@@ -183,5 +183,8 @@
     <string name="sp_save" translatable="false">Save</string>
     <string name="sp_hobby_reading" translatable="false">Reading</string>
     <string name="sp_hobby_else" translatable="false">No</string>
+    <string name="sp_field_required" translatable="false">Field tidak boleh kosong</string>
+    <string name="sp_field_digit_only" translatable="false">Hanya boleh terisi numerik</string>
+    <string name="sp_field_email_not_valid" translatable="false">Email tidak valid</string>
 
 </resources>
