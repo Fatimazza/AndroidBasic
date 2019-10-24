@@ -175,4 +175,11 @@
     <string name="weather_search" translatable="false">Cari</string>
     <string name="weather_id_jakarta_bandung_semarang" translatable="false">1642911,1650357,1627896</string>
 
+    <string name="sp_name" translatable="false">Nama</string>
+    <string name="sp_email" translatable="false">Email</string>
+    <string name="sp_handphone" translatable="false">Handphone</string>
+    <string name="sp_age" translatable="false">Age</string>
+    <string name="sp_hobby" translatable="false">Hobby</string>
+    <string name="sp_save" translatable="false">Save</string>
+
 </resources>
