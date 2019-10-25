@@ -2,6 +2,7 @@ package io.github.fatimazza.androidbasic
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -21,12 +22,49 @@ class SharedPreferenceFormActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private lateinit var userModel: SPUserModel
+    private var formType: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_shared_preference_form)
 
         btnPrefSave.setOnClickListener(this)
+        getIntentExtra()
+        setupFormType()
+        setupForm("", "")
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+
+    private fun getIntentExtra() {
+        userModel = intent.getParcelableExtra("USER") as SPUserModel
+        formType = intent.getIntExtra(EXTRA_TYPE_FORM, 0)
+    }
+
+    private fun setupFormType() {
+        when (formType) {
+            TYPE_ADD -> {
+                setupForm("Tambah Baru", "Simpan")
+            }
+            TYPE_EDIT -> {
+                setupForm("Ubah", "Update")
+                showPreferenceInForm()
+            }
+        }
+    }
+
+    private fun setupForm(actionBarTitle: String, btnTitle: String) {
+        supportActionBar?.title = actionBarTitle
+        btnPrefSave.text = btnTitle
+    }
+
+    private fun showPreferenceInForm() {
+        etPrefName.setText(userModel.name)
+        etPrefEmail.setText(userModel.email)
+        etPrefAge.setText(userModel.age)
+        etPrefHp.setText(userModel.handphone)
+        rbPrefReading.isChecked = userModel.hasReadingHobby
+        rbPrefNotReading.isChecked = !userModel.hasReadingHobby
     }
 
     override fun onClick(view: View) {
@@ -89,5 +127,10 @@ class SharedPreferenceFormActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun isValidEmail(email: CharSequence): Boolean {
         return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == android.R.id.home) finish()
+        return super.onOptionsItemSelected(item)
     }
 }
