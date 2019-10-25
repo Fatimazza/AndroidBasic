@@ -30,8 +30,8 @@ class SharedPreferenceFormActivity : AppCompatActivity(), View.OnClickListener {
 
         btnPrefSave.setOnClickListener(this)
         getIntentExtra()
-        setupFormType()
         setupForm("", "")
+        setupFormType()
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
@@ -61,7 +61,7 @@ class SharedPreferenceFormActivity : AppCompatActivity(), View.OnClickListener {
     private fun showPreferenceInForm() {
         etPrefName.setText(userModel.name)
         etPrefEmail.setText(userModel.email)
-        etPrefAge.setText(userModel.age)
+        etPrefAge.setText(userModel.age.toString())
         etPrefHp.setText(userModel.handphone)
         rbPrefReading.isChecked = userModel.hasReadingHobby
         rbPrefNotReading.isChecked = !userModel.hasReadingHobby

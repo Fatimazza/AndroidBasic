@@ -68,7 +68,7 @@ class SharedPreferenceActivity : AppCompatActivity(), View.OnClickListener {
         tv_sp_handphone.text = if (userModel.handphone.toString().isEmpty())
             "Tidak Ada" else userModel.handphone
         tv_sp_hobby.text = if (!userModel.hasReadingHobby)
-            "Tidak" else "Ya"
+            "Tidak Membaca" else "Membaca"
     }
 
     private fun checkForm(userModel: SPUserModel) {
