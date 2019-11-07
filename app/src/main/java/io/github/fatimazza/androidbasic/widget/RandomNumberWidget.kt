@@ -38,11 +38,11 @@ class RandomNumberWidget : AppWidgetProvider() {
             appWidgetId: Int
         ) {
 
-            val widgetText = context.getString(R.string.appwidget_text)
+            val lastUpdate = "Random: " + NumberGenerator.generate(100)
             // Construct the RemoteViews object
             val views = RemoteViews(context.packageName, R.layout.random_number_widget)
-            views.setTextViewText(R.id.appwidget_text, widgetText)
-
+            views.setTextViewText(R.id.appwidget_text, lastUpdate)
+            
             // Instruct the widget manager to update the widget
             appWidgetManager.updateAppWidget(appWidgetId, views)
         }
