@@ -49,14 +49,15 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".SharedPreferenceFormActivity" />
-        <activity android:name=".SharedPreferenceActivity">
+        <activity android:name=".WidgetActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".SharedPreferenceFormActivity" />
+        <activity android:name=".SharedPreferenceActivity" />
         <activity android:name=".WeatherActivity" />
         <activity
             android:name=".SMSReceiverActivity"
