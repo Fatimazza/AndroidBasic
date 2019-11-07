@@ -10,6 +10,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import io.github.fatimazza.androidbasic.widget.UpdateWidgetService
+import kotlinx.android.synthetic.main.activity_widget.*
 
 class WidgetActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -21,6 +22,9 @@ class WidgetActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_widget)
+
+        btn_jobscheduler_widget_start.setOnClickListener(this)
+        btn_jobscheduler_widget_stop.setOnClickListener(this)
     }
 
     override fun onClick(view: View) {
