@@ -190,5 +190,7 @@
 
     <string name="appwidget_text" translatable="false">EXAMPLE</string>
     <string name="add_widget" translatable="false">Add widget</string>
+    <string name="widget_start_update" translatable="false">START UPDATE</string>
+    <string name="widget_stop_update" translatable="false">STOP UPDATE</string>
 
 </resources>
