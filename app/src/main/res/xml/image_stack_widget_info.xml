@@ -4,6 +4,6 @@
     android:initialLayout="@layout/image_stack_widget"
     android:minWidth="250dp"
     android:minHeight="110dp"
-    android:previewImage="@drawable/example_appwidget_preview"
-    android:updatePeriodMillis="86400000"
+    android:previewImage="@drawable/starwars"
+    android:updatePeriodMillis="0"
     android:widgetCategory="home_screen" />
