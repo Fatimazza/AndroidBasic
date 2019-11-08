@@ -3,6 +3,7 @@ package io.github.fatimazza.androidbasic.widget
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
 import android.content.Context
+import android.content.Intent
 import android.widget.RemoteViews
 
 import io.github.fatimazza.androidbasic.R
@@ -31,7 +32,18 @@ class RandomNumberWidget : AppWidgetProvider() {
         // Enter relevant functionality for when the last widget is disabled
     }
 
+    override fun onReceive(context: Context?, intent: Intent?) {
+        super.onReceive(context, intent)
+    }
+
+    private fun getPendingSelfIntent() {
+        
+    }
+
     companion object {
+
+        private const val WIDGET_CLICK = "widgetsclick"
+        private const val WIDGET_ID_EXTRA = "widget_id_extra"
 
         internal fun updateAppWidget(
             context: Context, appWidgetManager: AppWidgetManager,
