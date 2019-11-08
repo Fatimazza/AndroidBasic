@@ -37,11 +37,11 @@ class RandomNumberWidget : AppWidgetProvider() {
     }
 
     companion object {
-        private const val WIDGET_CLICK = "widgetsclick"
+        private const val ACTION_CLICK = "APPWIDGET_ACTION_CLICK"
         private const val WIDGET_ID_EXTRA = "widget_id_extra"
     }
 
-    fun updateAppWidget(
+    private fun updateAppWidget(
         context: Context, appWidgetManager: AppWidgetManager,
         appWidgetId: Int
     ) {
@@ -55,7 +55,7 @@ class RandomNumberWidget : AppWidgetProvider() {
         appWidgetManager.updateAppWidget(appWidgetId, views)
     }
 
-    private fun getPendingSelfIntent() {
+    private fun getPendingSelfIntent(context: Context, appWidgetId: Int, action: String) {
 
     }
 }
