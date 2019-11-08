@@ -3,6 +3,7 @@ package io.github.fatimazza.androidbasic.widget
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
 import android.content.Context
+import android.content.Intent
 import android.widget.RemoteViews
 
 import io.github.fatimazza.androidbasic.R
@@ -31,9 +32,16 @@ class ImageStackWidget : AppWidgetProvider() {
         // Enter relevant functionality for when the last widget is disabled
     }
 
+    override fun onReceive(context: Context, intent: Intent) {
+        super.onReceive(context, intent)
+    }
+
     companion object {
 
-        internal fun updateAppWidget(
+        private const val TOAST_ACTION = "io.github.fatimazza.androidbasic.widget.TOAST_ACTION"
+        const val EXTRA_ITEM = "io.github.fatimazza.androidbasic.widget.EXTRA_ITEM"
+
+        private fun updateAppWidget(
             context: Context, appWidgetManager: AppWidgetManager,
             appWidgetId: Int
         ) {
