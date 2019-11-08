@@ -194,5 +194,6 @@
     <string name="widget_stop_update" translatable="false">STOP UPDATE</string>
     <string name="widget_job_started" translatable="false">Job Service started</string>
     <string name="widget_job_cancelled" translatable="false">Widget Job Service canceled</string>
+    <string name="appwidget_stack_text" translatable="false">Stack Widget</string>
 
 </resources>
