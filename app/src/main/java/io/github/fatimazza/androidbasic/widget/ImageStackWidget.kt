@@ -1,5 +1,6 @@
 package io.github.fatimazza.androidbasic.widget
 
+import android.app.PendingIntent
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
 import android.content.Context
@@ -55,6 +56,16 @@ class ImageStackWidget : AppWidgetProvider() {
             val views = RemoteViews(context.packageName, R.layout.image_stack_widget)
             views.setRemoteAdapter(R.id.stack_view, intent)
             views.setEmptyView(R.id.stack_view, R.id.empty_view)
+
+            val toastIntent = Intent(context, ImageStackWidget::class.java)
+            toastIntent.action = TOAST_ACTION
+            toastIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId)
+            intent.data = intent.toUri(Intent.URI_INTENT_SCHEME).toUri()
+
+            val toastPendingIntent = PendingIntent.getBroadcast(
+                context, 0, toastIntent, PendingIntent.FLAG_UPDATE_CURRENT
+            )
+            views.setPendingIntentTemplate(R.id.stack_view, toastPendingIntent)
 
             // Instruct the widget manager to update the widget
             appWidgetManager.updateAppWidget(appWidgetId, views)
