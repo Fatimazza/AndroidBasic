@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.util.Log
 import android.widget.RemoteViews
 import android.widget.RemoteViewsService
 import androidx.core.os.bundleOf
@@ -34,7 +35,9 @@ internal class StackRemoteViewFactory(private val mContext: Context) :
         val fillInIntent = Intent()
         fillInIntent.putExtras(extras)
 
-        rv.setOnClickFillInIntent(R.id.imageView, fillInIntent)
+        Log.d("Izza", "create intent ${extras.get(ImageStackWidget.EXTRA_ITEM)}")
+
+        rv.setOnClickFillInIntent(R.id.ivImageWidget, fillInIntent)
         return rv
     }
 

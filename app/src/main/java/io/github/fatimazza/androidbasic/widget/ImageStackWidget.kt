@@ -5,11 +5,13 @@ import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import android.widget.RemoteViews
 import android.widget.Toast
 import androidx.core.net.toUri
 
 import io.github.fatimazza.androidbasic.R
+import io.github.fatimazza.androidbasic.service.StackWidgetService
 
 /**
  * Implementation of App Widget functionality.
@@ -37,6 +39,7 @@ class ImageStackWidget : AppWidgetProvider() {
 
     override fun onReceive(context: Context, intent: Intent) {
         super.onReceive(context, intent)
+        Log.d("Izza", "onReceive ${intent.action}")
 
         if (intent.action != null) {
             if (intent.action == TOAST_ACTION) {
@@ -47,7 +50,6 @@ class ImageStackWidget : AppWidgetProvider() {
     }
 
     companion object {
-
         private const val TOAST_ACTION = "io.github.fatimazza.androidbasic.widget.TOAST_ACTION"
         const val EXTRA_ITEM = "io.github.fatimazza.androidbasic.widget.EXTRA_ITEM"
 
@@ -56,7 +58,9 @@ class ImageStackWidget : AppWidgetProvider() {
             appWidgetId: Int
         ) {
 
-            val intent = Intent(context, ImageStackWidget::class.java)
+            Log.d("Izza", "updateAppWidget")
+
+            val intent = Intent(context, StackWidgetService::class.java)
             intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId)
             intent.data = intent.toUri(Intent.URI_INTENT_SCHEME).toUri()
 
