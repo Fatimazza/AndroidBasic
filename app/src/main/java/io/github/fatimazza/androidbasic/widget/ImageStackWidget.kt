@@ -5,6 +5,7 @@ import android.appwidget.AppWidgetProvider
 import android.content.Context
 import android.content.Intent
 import android.widget.RemoteViews
+import androidx.core.net.toUri
 
 import io.github.fatimazza.androidbasic.R
 
@@ -46,10 +47,14 @@ class ImageStackWidget : AppWidgetProvider() {
             appWidgetId: Int
         ) {
 
-            val widgetText = context.getString(R.string.appwidget_stack_text)
-            // Construct the RemoteViews object
+            val intent = Intent(context, ImageStackWidget::class.java)
+            intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId)
+            intent.data = intent.toUri(Intent.URI_INTENT_SCHEME).toUri()
+
+            // Install Remote Adapter to Widget using Intent object & stack_view as RemoteView Id
             val views = RemoteViews(context.packageName, R.layout.image_stack_widget)
-            views.setTextViewText(R.id.appwidget_text, widgetText)
+            views.setRemoteAdapter(R.id.stack_view, intent)
+            views.setEmptyView(R.id.stack_view, R.id.empty_view)
 
             // Instruct the widget manager to update the widget
             appWidgetManager.updateAppWidget(appWidgetId, views)
