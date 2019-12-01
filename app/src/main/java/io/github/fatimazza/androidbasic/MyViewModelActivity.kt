@@ -33,9 +33,34 @@ class MyViewModelActivity : AppCompatActivity() {
         setContentView(R.layout.activity_myview_model)
 
         initViewModel()
+        displayResult()
+        setClickListener()
     }
 
     private fun initViewModel() {
         myViewModel = ViewModelProviders.of(this).get(MyViewModel::class.java)
+    }
+
+    private fun displayResult() {
+        tvResult.text = myViewModel.result.toString()
+    }
+
+    private fun setClickListener() {
+        btnCalculate.setOnClickListener {
+            val length = etLength.text.toString()
+            val width = etWidth.text.toString()
+            val height = etHeight.text.toString()
+
+            if (length.isEmpty()) {
+                etLength.error = "Empty Field"
+            } else if (width.isEmpty()) {
+                etWidth.error = "Empty Field"
+            } else if (height.isEmpty()) {
+                etHeight.error = "Empty Field"
+            } else {
+                myViewModel.calculate(length, width, height)
+                displayResult()
+            }
+        }
     }
 }
