@@ -30,7 +30,7 @@ class MyViewModelTest {
     }
 
     @Test
-    @Throws(java.lang.NumberFormatException::class)
+    @Throws(NumberFormatException::class)
     fun doubleInputCalculateTest() {
         val length: String = "2.5" //java.lang.NumberFormatException: For input string: "2.5"
         val width: String = "3"
@@ -40,5 +40,18 @@ class MyViewModelTest {
         thrown.expectMessage("For input string: \"2.5\"")
 
         myViewModel.calculate(length, width, height)
+    }
+
+    @Test
+    @Throws(NumberFormatException::class)
+    fun charInputCalculateTest() {
+        val width = "2"
+        val length = "A"
+        val height = "4"
+
+        thrown.expect(NumberFormatException::class.java)
+        thrown.expectMessage("For input string: \"A\"")
+
+        myViewModel.calculate(width, length, height)
     }
 }
