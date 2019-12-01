@@ -5,7 +5,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import io.github.fatimazza.androidbasic.viewmodel.MyViewModel
 import kotlinx.android.synthetic.main.activity_myview_model.*
 
@@ -38,7 +38,7 @@ class MyViewModelActivity : AppCompatActivity() {
     }
 
     private fun initViewModel() {
-        myViewModel = ViewModelProviders.of(this).get(MyViewModel::class.java)
+        myViewModel = ViewModelProvider(this).get(MyViewModel::class.java)
     }
 
     private fun displayResult() {
