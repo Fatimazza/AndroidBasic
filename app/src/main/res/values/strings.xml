@@ -1,11 +1,11 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name" translatable="false">AndroidBasic</string>
 
-    <string name="panjang">Panjang</string>
-    <string name="lebar">Lebar</string>
-    <string name="tinggi">Tinggi</string>
-    <string name="hitung">Hitung</string>
-    <string name="hasil">Hasil</string>
+    <string name="panjang" translatable="false">Panjang</string>
+    <string name="lebar" translatable="false">Lebar</string>
+    <string name="tinggi" translatable="false">Tinggi</string>
+    <string name="hitung" translatable="false">Hitung</string>
+    <string name="hasil" translatable="false">Hasil</string>
 
     <string name="move_activity">Pindah Activity</string>
     <string name="move_with_data">Pindah Activity dengan Data</string>
