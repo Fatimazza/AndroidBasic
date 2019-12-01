@@ -64,13 +64,14 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".WidgetActivity">
+        <activity android:name=".MyViewModelActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".WidgetActivity" />
         <activity android:name=".SharedPreferenceFormActivity" />
         <activity android:name=".SharedPreferenceActivity" />
         <activity android:name=".WeatherActivity" />
