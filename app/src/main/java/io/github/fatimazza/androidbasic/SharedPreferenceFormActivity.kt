@@ -37,7 +37,7 @@ class SharedPreferenceFormActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun getIntentExtra() {
-        userModel = intent.getParcelableExtra("USER") as SPUserModel
+        userModel = intent.getParcelableExtra("USER") ?: SPUserModel()
         formType = intent.getIntExtra(EXTRA_TYPE_FORM, 0)
     }
 

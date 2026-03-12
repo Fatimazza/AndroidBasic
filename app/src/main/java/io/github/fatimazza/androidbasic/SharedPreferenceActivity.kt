@@ -88,9 +88,9 @@ class SharedPreferenceActivity : AppCompatActivity(), View.OnClickListener {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == REQUEST_CODE) {
             if (resultCode == SharedPreferenceFormActivity.RESULT_CODE) {
-                userModel = data?.getParcelableExtra(
+                userModel = data?.getParcelableExtra<SPUserModel>(
                     SharedPreferenceFormActivity.EXTRA_RESULT
-                ) as SPUserModel
+                ) ?: SPUserModel()
                 populateView(userModel)
                 checkForm(userModel)
             }
