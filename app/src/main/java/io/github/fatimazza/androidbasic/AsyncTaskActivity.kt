@@ -37,7 +37,7 @@ class AsyncTaskActivity : AppCompatActivity() {
                     tv_async_desc.text = output
                 }
             } catch (e: Exception) {
-                Log.d(LOG_ASYNC, e.message)
+                e.message?.let { Log.d(LOG_ASYNC, it) }
             }
         }
     }
