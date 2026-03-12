@@ -115,7 +115,7 @@ class CustomEditText : AppCompatEditText {
         setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, imgClearButton, null)
     }
 
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         hint = "Masukkan nama Anda"
         textAlignment = View.TEXT_ALIGNMENT_VIEW_START

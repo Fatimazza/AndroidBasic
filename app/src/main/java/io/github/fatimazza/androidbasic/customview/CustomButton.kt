@@ -39,7 +39,7 @@ class CustomButton : AppCompatButton {
             ResourcesCompat.getDrawable(resources, R.drawable.bg_button_disable, null)
     }
 
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         background = when {
             isEnabled -> enableBackground
