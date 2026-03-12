@@ -25,8 +25,8 @@ class SMSReceiverActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun getExtra() {
-        smsSenderNo = intent.getStringExtra(EXTRA_SMS_NO)
-        smsMessage = intent.getStringExtra(EXTRA_SMS_MESSAGE)
+        smsSenderNo = intent.getStringExtra(EXTRA_SMS_NO) ?: ""
+        smsMessage = intent.getStringExtra(EXTRA_SMS_MESSAGE)  ?: ""
     }
 
     private fun initListener() {
