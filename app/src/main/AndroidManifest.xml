@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="io.github.fatimazza.androidbasic">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
@@ -13,9 +13,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true"
+        tools:replace="android:allowBackup,android:icon,android:theme">
 
-        <receiver android:name=".widget.ImageStackWidget">
+        <receiver android:name=".widget.ImageStackWidget"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -23,7 +25,8 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/image_stack_widget_info" />
         </receiver>
-        <receiver android:name=".widget.RandomNumberWidget">
+        <receiver android:name=".widget.RandomNumberWidget"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -64,7 +67,8 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".MyViewModelActivity">
+        <activity android:name=".MyViewModelActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -2,9 +2,12 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-android-extensions'
+    //id 'kotlin-parcelize'
 }
 
 android {
+    namespace 'io.github.fatimazza.androidbasic'
+
     compileSdkVersion 34
     defaultConfig {
         applicationId "io.github.fatimazza.androidbasic"
