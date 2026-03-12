@@ -20,7 +20,7 @@ class IntentMoveObjectActivity : AppCompatActivity() {
         val person = intent.getParcelableExtra<Person>(EXTRA_PERSON)
 
         val text =
-            "Name ${person.name}, \nAge ${person.age}, \nEmail ${person.email} \nCity ${person.city}"
+            "Name ${person?.name}, \nAge ${person?.age}, \nEmail ${person?.email} \nCity ${person?.city}"
         tvObjectReceived.text = text
     }
 }
