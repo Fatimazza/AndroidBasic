@@ -14,6 +14,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var btnFragment: Button
     private lateinit var btnRecyclerView: Button
     private lateinit var btnListView: Button
+    private lateinit var btnActionBar: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +26,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         btnRecyclerView = findViewById(R.id.btnRecyclerView)
         btnFragment = findViewById(R.id.btnFragment)
         btnListView = findViewById(R.id.btnListView)
+        btnActionBar = findViewById(R.id.btnActionBar)
 
         setClickListener()
     }
@@ -36,6 +38,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         btnRecyclerView.setOnClickListener(this)
         btnFragment.setOnClickListener(this)
         btnListView.setOnClickListener(this)
+        btnActionBar.setOnClickListener(this)
     }
 
     override fun onClick(view: View) {
@@ -68,6 +71,11 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
             R.id.btnListView -> {
                 val listviewIntent = Intent(this, ListViewActivity::class.java)
                 startActivity(listviewIntent)
+            }
+
+            R.id.btnActionBar -> {
+                val actionbarIntent = Intent(this, ActionBarActivity::class.java)
+                startActivity(actionbarIntent)
             }
         }
     }
