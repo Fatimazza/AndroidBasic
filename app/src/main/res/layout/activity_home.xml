@@ -14,4 +14,10 @@
         android:layout_height="wrap_content"
         android:text="Calculate Volume" />
 
+    <Button
+        android:id="@+id/btnIntent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Intent" />
+
 </LinearLayout>
