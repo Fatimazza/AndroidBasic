@@ -16,6 +16,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var btnListView: Button
     private lateinit var btnActionBar: Button
     private lateinit var btnNavDrawer: Button
+    private lateinit var btnBottomNav: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +30,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         btnListView = findViewById(R.id.btnListView)
         btnActionBar = findViewById(R.id.btnActionBar)
         btnNavDrawer = findViewById(R.id.btnNavDrawer)
+        btnBottomNav = findViewById(R.id.btnBottomNav)
 
         setClickListener()
     }
@@ -42,6 +44,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         btnListView.setOnClickListener(this)
         btnActionBar.setOnClickListener(this)
         btnNavDrawer.setOnClickListener(this)
+        btnBottomNav.setOnClickListener(this)
     }
 
     override fun onClick(view: View) {
@@ -84,6 +87,11 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
             R.id.btnNavDrawer -> {
                 val navDrawerIntent = Intent(this, NavigationDrawerActivity::class.java)
                 startActivity(navDrawerIntent)
+            }
+
+            R.id.btnBottomNav -> {
+                val bottomNavIntent = Intent(this, BottomNavigationActivity::class.java)
+                startActivity(bottomNavIntent)
             }
         }
     }

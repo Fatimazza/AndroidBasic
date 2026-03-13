@@ -56,4 +56,10 @@
         android:layout_height="wrap_content"
         android:text="Navigation Drawer" />
 
+    <Button
+        android:id="@+id/btnBottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bottom Navigation" />
+
 </LinearLayout>
