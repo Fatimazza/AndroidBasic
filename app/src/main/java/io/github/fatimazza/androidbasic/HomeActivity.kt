@@ -17,6 +17,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var btnActionBar: Button
     private lateinit var btnNavDrawer: Button
     private lateinit var btnBottomNav: Button
+    private lateinit var btnLocalization: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +32,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         btnActionBar = findViewById(R.id.btnActionBar)
         btnNavDrawer = findViewById(R.id.btnNavDrawer)
         btnBottomNav = findViewById(R.id.btnBottomNav)
+        btnLocalization = findViewById(R.id.btnLocalization)
 
         setClickListener()
     }
@@ -45,6 +47,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         btnActionBar.setOnClickListener(this)
         btnNavDrawer.setOnClickListener(this)
         btnBottomNav.setOnClickListener(this)
+        btnLocalization.setOnClickListener(this)
     }
 
     override fun onClick(view: View) {
@@ -92,6 +95,11 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
             R.id.btnBottomNav -> {
                 val bottomNavIntent = Intent(this, BottomNavigationActivity::class.java)
                 startActivity(bottomNavIntent)
+            }
+
+            R.id.btnLocalization -> {
+                val localizationIntent = Intent(this, LocalizationActivity::class.java)
+                startActivity(localizationIntent)
             }
         }
     }
