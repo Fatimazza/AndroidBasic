@@ -10,6 +10,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var btnCalculateVolume: Button
     private lateinit var btnIntent: Button
+    private lateinit var btnViews: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,6 +18,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
 
         btnCalculateVolume = findViewById(R.id.btnCalculateVolume)
         btnIntent = findViewById(R.id.btnIntent)
+        btnViews = findViewById(R.id.btnViews)
 
         setClickListener()
     }
@@ -24,6 +26,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
     private fun setClickListener() {
         btnCalculateVolume.setOnClickListener(this)
         btnIntent.setOnClickListener(this)
+        btnViews.setOnClickListener(this)
     }
 
     override fun onClick(view: View) {
@@ -35,6 +38,10 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
             R.id.btnIntent -> {
                 val demoIntent = Intent(this, IntentActivity::class.java)
                 startActivity(demoIntent)
+            }
+            R.id.btnViews -> {
+                val viewsIntent = Intent(this, ViewsActivity::class.java)
+                startActivity(viewsIntent)
             }
         }
     }

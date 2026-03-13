@@ -20,4 +20,10 @@
         android:layout_height="wrap_content"
         android:text="Intent" />
 
+    <Button
+        android:id="@+id/btnViews"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Views with Style" />
+
 </LinearLayout>
