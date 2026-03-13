@@ -17,7 +17,13 @@
         tools:replace="android:allowBackup,android:icon,android:theme">
         <activity
             android:name=".HomeActivity"
-            android:exported="false" />
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <receiver android:name=".widget.ImageStackWidget"
             android:exported="true">
@@ -72,11 +78,6 @@
 
         <activity android:name=".MyViewModelActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".WidgetActivity" />
         <activity android:name=".SharedPreferenceFormActivity" />
