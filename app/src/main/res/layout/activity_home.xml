@@ -8,4 +8,10 @@
     android:orientation="vertical"
     tools:context=".HomeActivity">
 
+    <Button
+        android:id="@+id/btnCalculateVolume"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calculate Volume" />
+
 </LinearLayout>

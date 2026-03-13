@@ -1,11 +1,34 @@
 package io.github.fatimazza.androidbasic
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity(), View.OnClickListener {
+
+    private lateinit var btnCalculateVolume: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
+        btnCalculateVolume = findViewById(R.id.btnCalculateVolume)
+
+        setClickListener()
+    }
+
+    private fun setClickListener() {
+        btnCalculateVolume.setOnClickListener(this)
+    }
+
+    override fun onClick(view: View) {
+        when (view.id) {
+            R.id.btnCalculateVolume -> {
+                val calculationIntent = Intent(this, MainActivity::class.java)
+                startActivity(calculationIntent)
+            }
+        }
     }
 }
