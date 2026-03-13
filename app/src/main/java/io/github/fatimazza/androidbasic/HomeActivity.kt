@@ -12,6 +12,8 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var btnIntent: Button
     private lateinit var btnViews: Button
 
+    private lateinit var btnRecyclerView: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
@@ -19,6 +21,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         btnCalculateVolume = findViewById(R.id.btnCalculateVolume)
         btnIntent = findViewById(R.id.btnIntent)
         btnViews = findViewById(R.id.btnViews)
+        btnRecyclerView = findViewById(R.id.btnRecyclerView)
 
         setClickListener()
     }
@@ -27,6 +30,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         btnCalculateVolume.setOnClickListener(this)
         btnIntent.setOnClickListener(this)
         btnViews.setOnClickListener(this)
+        btnRecyclerView.setOnClickListener(this)
     }
 
     override fun onClick(view: View) {
@@ -42,6 +46,10 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
             R.id.btnViews -> {
                 val viewsIntent = Intent(this, ViewsActivity::class.java)
                 startActivity(viewsIntent)
+            }
+            R.id.btnRecyclerView -> {
+                val recyclerviewIntent = Intent(this, RecyclerViewActivity::class.java)
+                startActivity(recyclerviewIntent)
             }
         }
     }
