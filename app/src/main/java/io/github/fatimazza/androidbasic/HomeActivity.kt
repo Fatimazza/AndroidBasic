@@ -11,9 +11,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var btnCalculateVolume: Button
     private lateinit var btnIntent: Button
     private lateinit var btnViews: Button
-
     private lateinit var btnFragment: Button
-
     private lateinit var btnRecyclerView: Button
     private lateinit var btnListView: Button
 
@@ -46,22 +44,27 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
                 val calculationIntent = Intent(this, MainActivity::class.java)
                 startActivity(calculationIntent)
             }
+
             R.id.btnIntent -> {
                 val demoIntent = Intent(this, IntentActivity::class.java)
                 startActivity(demoIntent)
             }
+
             R.id.btnViews -> {
                 val viewsIntent = Intent(this, ViewsActivity::class.java)
                 startActivity(viewsIntent)
             }
+
             R.id.btnRecyclerView -> {
                 val recyclerviewIntent = Intent(this, RecyclerViewActivity::class.java)
                 startActivity(recyclerviewIntent)
             }
+
             R.id.btnFragment -> {
                 val fragmentIntent = Intent(this, FragmentActivity::class.java)
                 startActivity(fragmentIntent)
             }
+
             R.id.btnListView -> {
                 val listviewIntent = Intent(this, ListViewActivity::class.java)
                 startActivity(listviewIntent)
